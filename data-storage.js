@@ -60,6 +60,17 @@ function addPerson(person){
 }
 function addPersonLike(personId,movieId){
 
+    getPeople((people)=>{
+        let person = people.find((person)=> person.id == personId)
+
+        person["movies-liked"].push(movieId);
+
+        fs.writeFile("./data/people.json", JSON.stringify({people:people},null,4), (err)=>{
+            if(err){
+                console.log("writing to file in to update person failed")
+            }
+        })
+    })
 }
 
 function addMovie(movie){
@@ -77,21 +88,24 @@ function addMovie(movie){
     })
 }
 function addMovieLike(movieId,personId){
+    getMovies((movies)=>{
+        let movie = movies.find((movie)=> movie.id == movieId)
 
+        movie["people-likes"].push(personId);
+
+        fs.writeFile("./data/movies.json", JSON.stringify({movies:movies},null,4), (err)=>{
+            if(err){
+                console.log("writing to file in to update movie failed")
+            }
+        })
+    })
 }
 
 function addLike(personId, movieId){
-    //get persons array
-    //reference perosn in array with personId
-    //add new id to movie likes of person
-
-    //get movies array
-    //reference perosn in array with moviesId
-    //add new id to movie likes of person
-
-    //write new person array to file
-    //write new movie array to file
+    addPersonLike(personId,movieId);
+    addMovieLike(movieId,personId);
 }
+
 
 
 module.exports = {
