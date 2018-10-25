@@ -1,0 +1,19 @@
+{
+  "name": "movie-faves",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/Rubymoyes/movie-faves.git",
+  "author": "Joan, Ruby, Peter, James",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.16.4",
+    "express-handlebars": "^3.0.0"
+  },
+  "devDependencies": {
+    "cheerio": "^1.0.0-rc.2",
+    "jest": "^23.6.0",
+    "nodemon": "^1.18.4",
+    "supertest": "^3.3.0"
+  },
+  "private": false
+}
