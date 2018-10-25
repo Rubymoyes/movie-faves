@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "debug" : "nodemon index",
-    "start" : "node index"
+    "debug": "nodemon index",
+    "start": "node index"
   },
   "repository": "https://github.com/Rubymoyes/movie-faves.git",
   "author": "Joan, Ruby, James, Peter",
