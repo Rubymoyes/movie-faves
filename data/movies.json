@@ -1,0 +1,25 @@
+{
+    "movies": [
+        {
+            "id": 1,
+            "title": "The Matrix",
+            "categories": [
+                "Action",
+                "Sci-Fi"
+            ],
+            "people-likes": [
+                "4",
+                "2",
+                "10"
+            ]
+        },
+        {
+            "id": 2,
+            "title": "The Matrix Revolutions",
+            "categories": [
+                "Regret"
+            ],
+            "people-likes": []
+        }
+    ]
+}
