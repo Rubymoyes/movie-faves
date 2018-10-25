@@ -41,7 +41,22 @@ router.get('/movies/:id', function (req, res) {
   })
 })
 
+router.post('/movies/edit', function (req, res) {
 
+  let newMovie = {
+    id: 0,
+    title: "",
+    categories: [],
+    "people-likes": []
+  }
+
+  newMovie.title = req.body.title
+  newMovie.categories.push(req.body.category)
+
+  dataStorage.addMovie(newMovie)
+  console.log('the data is:', req.body)
+  res.redirect('/movies')
+})
 
 
 module.exports = {

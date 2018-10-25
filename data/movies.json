@@ -28,6 +28,22 @@
                 "Absolutely Regret"
             ],
             "people-likes": []
+        },
+        {
+            "id": 4,
+            "title": "The Room",
+            "categories": [
+                "Comedy"
+            ],
+            "people-likes": []
+        },
+        {
+            "id": 5,
+            "title": "a new movie",
+            "categories": [
+                "Sci-Fi"
+            ],
+            "people-likes": []
         }
     ]
 }

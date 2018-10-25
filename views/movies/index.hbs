@@ -5,11 +5,13 @@
 <ul>
   {{#each movies}}
   <li>
-    {{title}}: {{categories}}
+    <a href="/movies/{{id}}">{{title}}</a>: {{categories}}
   </li>
 
   {{/each}}
 </ul>
+
+<a href="/movies/edit">Add a new film?</a>
 
 {{!--
 <ul>
