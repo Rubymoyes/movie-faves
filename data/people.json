@@ -1,0 +1,23 @@
+{
+    "people": [
+        {
+            "id": 1,
+            "name": "james",
+            "movies-liked": [
+                1,
+                4,
+                2,
+                1
+            ]
+        },
+        {
+            "id": 2,
+            "name": "james",
+            "movies-liked": [
+                7,
+                2,
+                3
+            ]
+        }
+    ]
+}
