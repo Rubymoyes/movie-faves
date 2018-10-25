@@ -2,9 +2,15 @@
   "name": "movie-faves",
   "version": "1.0.0",
   "main": "index.js",
+  "scripts": {
+    "debug": "nodemon index",
+    "start": "node index",
+    "test": "jest --watchAll"
+  },
   "repository": "https://github.com/Rubymoyes/movie-faves.git",
-  "author": "Joan, Ruby, Peter, James",
+  "author": "Joan, Ruby, James, Peter",
   "license": "MIT",
+  "private": false,
   "dependencies": {
     "express": "^4.16.4",
     "express-handlebars": "^3.0.0"
@@ -14,6 +20,5 @@
     "jest": "^23.6.0",
     "nodemon": "^1.18.4",
     "supertest": "^3.3.0"
-  },
-  "private": false
+  }
 }
