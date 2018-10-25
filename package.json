@@ -4,7 +4,8 @@
   "main": "index.js",
   "scripts": {
     "debug": "nodemon index",
-    "start": "node index"
+    "start": "node index",
+    "test": "jest --watchAll"
   },
   "repository": "https://github.com/Rubymoyes/movie-faves.git",
   "author": "Joan, Ruby, James, Peter",
