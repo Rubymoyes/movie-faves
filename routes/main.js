@@ -3,8 +3,22 @@ const router = express.Router()
 const fs = require('fs')
 
 router.get('/', function(req, res){
-  res.send('Kia ora')
-
+  let viewData = {names: [
+    {
+      name: 'Ruby'
+    },
+    {
+      name: 'Joan'
+    },
+    {
+      name: 'James'
+    },
+    {
+      name: 'Peter'
+    }
+  ]
+  }
+  res.render('index', viewData)
 })
 
 

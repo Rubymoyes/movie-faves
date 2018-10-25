@@ -1,0 +1,414 @@
+/*  
+
+movie-faves
+EDA Bootcamp Hihi 2018
+
+*/
+/* 
+body {
+    background-color: antiquewhite;
+}
+
+header {
+    background-color: bisque;
+}
+
+footer {
+    background-color: aquamarine;
+}
+
+*/
+
+
+
+
+
+/*=======================================
+	main-grid.css
+=========================================
+
+Project	:	Pete's Sprint-9 site redesign and CSS Grid
+Source	:	https://github.com/ptorrsmith
+Author	:	Peter Torr Smith
+URL		:	ptorrsmith.github.com
+
+
+Contents:
+
+	- Housekeeping
+	- Nav Container
+	- Menu List
+	- Triggers
+	- Breakpoints
+	- Helpers
+
+=========================================
+	Housekeeping 
+=======================================*/
+
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    /* background-color: black; */
+    font-family: Raleway, sans-serif;
+    font-size: 12px;
+    margin: 0;
+}
+
+.grid {
+    display: grid;
+    grid-gap: 10px;
+}
+
+.page {
+    margin: auto;
+    background-color: rgb(230, 226, 173);
+    /* display: grid; */
+    /* grid-gap: 10px; */
+    grid-template-areas: 
+        "header"
+        "nav"
+        "blockquote"
+        "hero"
+        "main"
+        /* "aside" */
+        "bottom-nav"
+        "pre-footer"
+        "footer"
+        ;
+}
+
+
+header, blockquote, .hero, main, .latest, .recent, aside {
+    /* border-radius: 5px; */
+    /* border: 2px solid gray; */
+    /* padding: 0.5rem; */
+}
+
+header {
+    margin-top:15px;
+    color: white;
+    /* display: grid; */
+    grid-template-columns: 3fr 1fr;
+    grid-area: header;
+    background-color: cadetblue; /* if image unavailable */
+    background-image: url("../images/kowhai.jpg");
+    background-repeat: no-repeat;
+    background-size: auto;
+    /* filter: sepia(3); */  
+    /* margin-bottom: -50px; */
+
+    padding-left: 1em;
+}
+
+header img {
+    box-shadow: 5px 5px 5px rgb(18, 63, 65);
+    /* box-shadow: none; */
+    /* border: solid .3em white; */
+    margin: -8px;
+    margin-bottom: -75px;
+    filter: none;
+
+}
+
+nav {
+    grid-area: nav;
+    /* grid-template-columns: repeat(5, minmax(30px, 200px)); */
+    grid-template-columns: repeat(5, minmax(40px, 500px));
+    width: 70%;
+    /* grid-column-gap: 0; */
+    margin-left:1em;
+    /* grid-gap: 0; */
+
+    /* justify-self: left; */
+}
+
+nav.grid {
+    grid-column-gap: 0;
+}
+
+/* nav ul { */
+    /* display:grid; */
+    /* grid-template-columns: repeat(auto-fit, minmax( 50px, 100px)); */
+            /* grid-template-columns: repeat(5, minmax(50px, 250px)); */
+    /* grid-template-columns: repeat(5, 1fr); */
+    /* list-style: none; */
+            /* list-style-type: none;
+            margin-block-start: 0;
+            margin-block-end: 0; */
+    /* margin-inline-start: 0px;
+    margin-inline-end: 0px; */
+            /* padding-inline-start: 0;
+            justify-items: stretch; */
+    /* margin-top: 0;
+    margin-bottom: 0; */
+/* } */
+
+nav li {
+    /* display: inline; */
+    /* margin-left: 10px;
+    margin-right: 10px; */
+    /* font-size: 1.2em;
+    font-weight: bold; */
+}
+
+nav li .current {
+    /* border: 1px solid grey; */
+            /* background-color: lightgray; */
+}
+
+nav p {
+    /* width: 100%; */
+    border: 1px solid cadetblue;
+    text-align: center;
+    /* padding: 10px; */
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+nav a {
+    padding: 5px;
+    /* border: 1px solid cadetblue; */
+    margin: 0;
+}
+
+nav p.current {
+    background-color: cadetblue;
+    color: white;
+}
+
+nav p.current a {
+    /* background-color: cadetblue; */
+    color: white;
+}
+
+blockquote {
+    width: 65%;
+    grid-area: blockquote;
+    box-shadow: 2px 2px 3px grey;
+    background-color: beige;
+    padding: 5px;
+    /* border-radius: 10px; */
+    padding-bottom: 15px;
+    margin-left: 20px;
+}
+cite {
+    /* text-align: right; */
+    padding-bottom: 12px;
+}
+
+.hero {
+    /* display: grid; */
+    grid-template-columns: repeat(2, 1fr);
+    grid-area: hero;
+    /* align-content: center;
+    justify-content: center; */
+    background-color: orange;
+    box-shadow: 5px 5px 5px darkorange;
+    margin-left:5px;
+    margin-right: 8px;
+}
+
+.hero .promo-nav {
+    /* border: 1px solid red; */
+    padding: 0.5rem;
+    text-align: center;
+}
+
+main {
+    /* display: grid; */
+    /* grid-template-columns: 1fr 1fr; */
+    /* grid-gap: 10px; */
+    grid-area: main;
+    grid-template-areas: 
+        "latest"
+        "recent"
+        ; 
+    /* padding-left: 1em; */
+}
+
+h1 {
+    font-size: 2.2em;
+}
+
+header h1, header p.subtitle {
+    text-shadow: 2px 2px 15px black;
+    margin-left: 1rem;
+}
+
+a {
+    /* color:#c66; */
+    color: rgb(57, 74, 228);
+	text-decoration: none;
+}
+
+
+img {
+    max-width: 100%;
+    box-shadow: 5px 5px 5px gray;
+    /* border-radius: 5px; */
+    /* text-align: center; */
+    /* margin-left: -1em; */
+    /* margin-right: -1em; */
+}
+
+
+/* mobile first layout */
+
+
+
+.latest {
+    grid-area: latest;
+    background-color: rgb(149, 207, 209);
+    margin-left: 5px;
+    margin-right: 8px;
+    padding-left: 5px;
+    padding-right: 8px;
+    box-shadow: 5px 5px 5px cadetblue;
+}
+
+.latest h1, .recent h1 {
+    text-align: center;
+    font-size: 2.6rem;
+    margin: 20px;
+}
+
+.latest h2 a {
+    color: rgb(37, 65, 143);
+}
+
+.recent h2 a {
+    color: rgb(65, 97, 0);
+}
+
+.latest-promo, .recent-promo {
+    padding: 3px;
+    padding-right:6px;
+    border-radius: 3px;
+    margin-bottom: 10px;
+}
+
+.latest-promo {
+    box-shadow: 3px 3px 3px cadetblue;
+    border: 1px solid rgb(33, 151, 180);
+}
+.recent-promo {
+    box-shadow: 3px 3px 3px rgb(106, 160, 95);
+    border: 1px solid rgb(97, 141, 32);
+
+}
+
+.recent {
+    grid-area: recent;
+    background-color: rgb(157, 190, 102);
+    margin-left: 5px;
+    margin-right: 8px;
+    padding-left: 5px;
+    padding-right: 8px;
+    box-shadow: 5px 5px 5px rgb(66, 116, 19);
+}
+
+aside {
+    grid-area: aside;
+}
+
+footer {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    grid-area: footer;
+    justify-content: stretch;
+    text-align: center;
+    background-color: cadetblue;
+    color: white;
+}
+
+footer div {
+    float: left;
+}
+
+.bottom-nav {
+    /* grid-area: bottom-nav; */
+    text-align: center;
+    padding-top: 0.9rem;
+    /* vertical-align: middle; */
+    position: fixed;
+    bottom: 15px;
+    right: 25px;
+    border: 1px solid cadetblue;
+    border-radius: 50%;
+    background-color: beige;
+    height: 3rem;
+    width: 3rem;
+    box-shadow: 5px 5px 10px grey;
+    opacity: 0.3;
+}
+
+.bottom-nav:hover {
+    opacity: 0.8;
+}
+
+.pre-footer {
+    grid-area: pre-footer;
+}
+
+
+
+/* responsive progressive enhancement at breakpoints */
+
+@media (min-width: 640px) {
+    body {
+        font-size:16px;
+
+    }
+    .page {
+        max-width: 1200px;
+        grid-template-columns: 4fr 4fr 4fr;
+        grid-template-areas: 
+        "header header header"
+        "nav nav nav"
+        "blockquote blockquote blockquote"
+        "hero hero hero"
+        "main main main"
+        /* "bottom-nav bottom-nav bottom-nav" */
+        "pre-footer pre-footer pre-footer"
+        "footer footer footer"
+        ;
+
+    }
+    main {
+        grid-template-columns: 6fr 6fr;
+        grid-template-areas: 
+            "latest recent"
+            "latest recent"
+            ; 
+    }
+    .hero {
+        grid-template-columns: repeat(4, 1fr);
+    }
+/*     
+    nav {
+        justify-self: stretch;
+    }
+
+    nav li {
+        display: block;
+
+    } */
+        
+    
+    
+}
+
+@media (min-width: 1200px) {
+    body {
+        font-size:19px;
+        background-image: url("../images/kowhai-bkgd.jpg");
+        background-repeat: no-repeat;
+        /* background-size: cover; */
+        background-size: contain
+
+    }
+}
