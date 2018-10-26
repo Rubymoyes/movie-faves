@@ -1,0 +1,14 @@
+<h2>
+  The Movies
+</h2>
+
+<ul>
+  {{#each movies}}
+  <li>
+    <a href="/movies/{{id}}">{{title}}</a>: {{categories}}
+  </li>
+
+  {{/each}}
+</ul>
+
+<a href="/movies/edit">Add a new film?</a>

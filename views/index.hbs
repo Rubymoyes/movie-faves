@@ -1,12 +1,29 @@
-<h1>Welcome to the EDA Hihi 2018 Movie Faves</h1>
+<main class="features grid">
 
-<p>by Ruby, Joan, James and Peter, and no doubt a few helpers :-)</p>
+    <section class="top-movies">
 
-<ul>
-    {{#each names}}
-    <li>{{name}}</li>
+        <h2>Top Voted Flicks</h2>
 
-    {{/each}}
-</ul>
+        {{#each movies}}
+        {{>movie-summary}}
 
-<p>EDA Bootcamp Group Project 2.1</p>
+
+        {{/each}}
+
+
+
+
+
+    </section>
+
+    <section class="categories">
+        <h2>Categories</h2>
+
+        <div class="category">
+            <h2><a href="#">Documentary / Bio-pic</a></h2>
+            <p>seriously interesting - for the open learning mindest only!</p>
+        </div>
+
+    </section>
+
+</main>
