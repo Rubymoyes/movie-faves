@@ -16,7 +16,9 @@ router.get('/', function (req, res) {
 router.get('/movies', function (req, res) {
   dataStorage.getMovies(function (movies) {
     // res.send('the movies' + JSON.stringify(movies))\
-    res.render('movies/index', { movies: movies })
+    res.render('movies/index', {
+      movies: movies
+    })
   })
 })
 
