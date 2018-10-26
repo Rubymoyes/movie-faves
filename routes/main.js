@@ -5,15 +5,33 @@ const dataStorage = require('../data-storage')
 
 router.get('/', function (req, res) {
   dataStorage.getMovies(function (movies) {
-    // res.send('the movies' + JSON.stringify(movies))\
-    res.render('index', { movies: movies })
+
+    let categories = [{
+        name: 'Documentary / Bio-pic',
+        description: 'seriously interesting - for the open learning mindest only!'
+      },
+      {
+        name: 'Sci-fi / Fantasy',
+        description: 'Out of this world!'
+      },
+      {
+        name: 'Animation',
+        description: 'Cute and cuddly - with a moral for the kids!'
+      }
+    ]
+    let viewData = {}
+    viewData.movies = movies
+    viewData.categories = categories
+    res.render('index', viewData)
   })
 })
 
 router.get('/movies', function (req, res) {
   dataStorage.getMovies(function (movies) {
     // res.send('the movies' + JSON.stringify(movies))\
-    res.render('movies/index', { movies: movies })
+    res.render('movies/index', {
+      movies: movies
+    })
   })
 })
 
