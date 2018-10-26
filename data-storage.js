@@ -11,6 +11,28 @@ function getSingleMovie(id, callback) {
     });
 }
 
+
+function getMoviesAndCategories(callback) {
+    fs.readFile("./data/movies.json", (err, data) => {
+        let movies = JSON.parse(data);
+
+        //console.log("movie data = ", movies)
+        let categories = movies.movies.reduce((output, movie) => {
+
+            for (let i = 0; i < movie.categories.length; i++) {
+                if (!output.includes({ category: movie.categories[i] })) {
+                    output.push({ category: movie.categories[i] });
+                }
+            }
+
+            return output;
+        }, [])
+
+
+        callback(movies.movies, categories);
+    });
+}
+
 function getMovies(callback) {
     fs.readFile("./data/movies.json", (err, data) => {
         let movies = JSON.parse(data);
@@ -113,6 +135,7 @@ module.exports = {
     getMovies,
     getSinglePerson,
     getPeople,
+    getMoviesAndCategories,
 
     addPerson,
     addMovie,
