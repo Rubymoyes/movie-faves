@@ -1,42 +1,29 @@
 <main class="features grid">
 
-            <section class="top-movies">
+    <section class="top-movies">
 
-                <h2>Top Voted Flicks</h2>
+        <h2>Top Voted Flicks</h2>
 
-    {{#each names}}
-    {{>movie-summary}}
-
-
-    {{/each}}
+        {{#each movies}}
+        {{>movie-summary}}
 
 
-
-
-
-            </section>
-
-            <section class="categories">
-                <h2>Categories</h2>
-
-                <div class="category">
-                    <h2><a href="#">Documentary / Bio-pic</a></h2>
-                    <p>seriously interesting - for the open learning mindest only!</p>
-                </div>
-
-            </section>
-
-        </main>
+        {{/each}}
 
 
 
 
 
+    </section>
 
+    <section class="categories">
+        <h2>Categories</h2>
 
+        <div class="category">
+            <h2><a href="#">Documentary / Bio-pic</a></h2>
+            <p>seriously interesting - for the open learning mindest only!</p>
+        </div>
 
+    </section>
 
-
-
-
-
+</main>

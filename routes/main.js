@@ -4,23 +4,10 @@ const fs = require('fs')
 const dataStorage = require('../data-storage')
 
 router.get('/', function (req, res) {
-  let viewData = {
-    names: [
-      {
-        name: 'Ruby'
-      },
-      {
-        name: 'Joan'
-      },
-      {
-        name: 'James'
-      },
-      {
-        name: 'Peter'
-      }
-    ]
-  }
-  res.render('index', viewData)
+  dataStorage.getMovies(function (movies) {
+    // res.send('the movies' + JSON.stringify(movies))\
+    res.render('index', { movies: movies })
+  })
 })
 
 router.get('/movies', function (req, res) {
