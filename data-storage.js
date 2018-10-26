@@ -16,18 +16,20 @@ function getMoviesAndCategories(callback) {
     fs.readFile("./data/movies.json", (err, data) => {
         let movies = JSON.parse(data);
 
+        console.log("movies = " + JSON.stringify(movies, null, 4))
+
+        let categories = [];
         //console.log("movie data = ", movies)
-        let categories = movies.movies.reduce((output, movie) => {
-
-            for (let i = 0; i < movie.categories.length; i++) {
-                if (!output.includes({ category: movie.categories[i] })) {
-                    output.push({ category: movie.categories[i] });
+        movies.movies.forEach(movie => {
+            movie.categories.forEach((category) => {
+                if (!categories.includes(category)) {
+                    categories.push(category);
                 }
-            }
+            });
+        })
+        console.log(categories)
 
-            return output;
-        }, [])
-
+        categories = categories.map((category) => { return { category } })
 
         callback(movies.movies, categories);
     });
